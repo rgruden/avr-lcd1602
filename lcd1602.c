@@ -23,10 +23,10 @@ void putnibble(char t)
 {
 	t <<= 4;
 	i2c_send_packet(lcd.led_pin |= 0x04, SLA_W);
-	_delay_us(50);
+	//_delay_us(50);
 	i2c_send_packet(lcd.led_pin | t, SLA_W);
 	i2c_send_packet(lcd.led_pin &= ~0x04, SLA_W);
-	_delay_us(50);
+	//_delay_us(50);
 }
 
 void lcd1602_send_byte(char c, char rs)
